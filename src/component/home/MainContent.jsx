@@ -1,6 +1,9 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+
 
 export default function MainContent() {
+  const navigate = useNavigate()
   return (
     <div className='page-wrapper'>
       <main className="main">
@@ -327,38 +330,39 @@ export default function MainContent() {
               >
                 {[1, 1, 1, 1].map((item) => (
                   <div className="product product-2">
-                    <figure className="product-media">
-                      <a href="product.html">
-                        <img
-                          src="assets/images/demos/demo-8/products/product-1-1.jpg"
-                          alt="Product image"
-                          className="product-image"
-                        />
-                        <img
-                          src="assets/images/demos/demo-8/products/product-1-2.jpg"
-                          alt="Product image"
-                          className="product-image-hover"
-                        />
-                      </a>
-                      <div className="product-action-vertical">
-                        <a
-                          href="#"
-                          className="btn-product-icon btn-wishlist btn-expandable"
-                          title="Add to wishlist"
-                        >
-                          <span>add to wishlist</span>
+                
+                      <figure className="product-media" onClick={() => navigate('/detail')}>
+                        <a>
+                          <img
+                            src="assets/images/demos/demo-8/products/product-1-1.jpg"
+                            alt="Product image"
+                            className="product-image"
+                          />
+                          <img
+                            src="assets/images/demos/demo-8/products/product-1-2.jpg"
+                            alt="Product image"
+                            className="product-image-hover"
+                          />
                         </a>
-                      </div>
-                      {/* End .product-action */}
-                      <div className="product-action ">
-                        <a href="#" className="btn-product btn-cart">
-                          <span>add to cart</span>
-                        </a>
-                      </div>
-                      {/* End .product-action */}
-                    </figure>
+                        <div className="product-action-vertical">
+                          <a
+  
+                            className="btn-product-icon btn-wishlist btn-expandable"
+                            title="Add to wishlist"
+                          >
+                            <span>add to wishlist</span>
+                          </a>
+                        </div>
+                        {/* End .product-action */}
+                        <div className="product-action ">
+                          <a className="btn-product btn-cart">
+                            <span>add to cart</span>
+                          </a>
+                        </div>
+                        {/* End .product-action */}
+                      </figure>
                     {/* End .product-media */}
-                    <div className="product-body">
+                    <div className="product-body" onClick={() => navigate('/detail')}>
                       <div className="product-cat">
                         <a href="#">Clothing</a>
                       </div>
